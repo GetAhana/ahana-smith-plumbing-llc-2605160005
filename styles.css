@@ -1,0 +1,98 @@
+/* Supplemental stylesheet — critical layout/CSS remains inline in HTML templates. */
+:root {
+  --ahana-brand-primary: #2563EB;
+  --ahana-brand-accent: #64748B;
+  /* Match templates/starter + samples/enhanced content column */
+  --container-w: 1100px;
+}
+
+.skip-link {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link:focus {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  clip: auto;
+  padding: 0.65rem 1rem;
+  margin: 0;
+  z-index: 99999;
+  background: #fff;
+  color: #111;
+  border-radius: 10px;
+  font-weight: 800;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+}
+
+#sticky-header .nav-links a.nav-current,
+#mobile-menu a.nav-current {
+  color: var(--brand-primary);
+}
+
+/* Home + gallery image carousel — main.js [data-carousel]; not .carousel--reviews (testimonials) */
+.carousel:not(.carousel--reviews) {
+  margin-top: 2.25rem;
+  width: 100%;
+  max-width: 100%;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.carousel:not(.carousel--reviews) .c-track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.45s ease;
+}
+.carousel:not(.carousel--reviews) .c-item {
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  background: #111;
+}
+.carousel:not(.carousel--reviews) .c-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0.92;
+}
+.carousel:not(.carousel--reviews) .c-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 1rem;
+  background: var(--brand-light, #f7f7f7);
+}
+.carousel:not(.carousel--reviews) .c-btn {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #fff;
+  border-radius: 10px;
+  padding: 0.55rem 0.9rem;
+  font-weight: 800;
+  cursor: pointer;
+  font-family: inherit;
+}
+.carousel:not(.carousel--reviews) .c-btn:hover {
+  border-color: var(--brand-primary, #ff5733);
+}
+.carousel:not(.carousel--reviews) .c-meta {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 700;
+}
